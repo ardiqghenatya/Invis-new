@@ -1,6 +1,4 @@
-<?php
-//include('login/cek-login.php');
-?>
+
 <!DOCTYPE html>
 
 <html class="no-js"> 
