@@ -1,70 +1,58 @@
 
-<div ng-app="myApp" ng-controller="userCtrl" class="col-xs-15 col-xs-offset-1 main">
+<body ng-app="WebApp" ng-controller="arcCtrl">
 <div class="container">
-<h3>Users</h3>
+  <div class="col-xs-15 col-xs-offset-1 main">
+  <h3>Pelanggan</h3>
 
 <table class="table table-striped">
   <thead><tr>
     <th>Edit</th>
-    <th>First Name</th>
-    <th>Last Name</th>
+    <th>Nama</th>
+    <th>Alamat</th>
+    <th>No-Telp</th>
   </tr></thead>
-  <tbody><tr ng-repeat="user in users">
+  <tbody>
+    <tr ng-repeat="item in arcTableBarang.result">
     <td>
       <button class="btn" ng-click="editUser(user.id)">
       <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit
       </button>
     </td>
-    <td>{{ user.fName }}</td>
-    <td>{{ user.lName }}</td>
-  </tr></tbody>
-</table>
 
+    <td>{{ item.Nama }}</td>
+    <td>{{ item.Alamat }}</td>
+    <td>{{ item.No-Telp }}</td>
+  </tr></tbody>
+</button>
+</table>
 <hr>
-<button class="btn btn-success" ng-click="editUser('new')">
+<form class="form-horizontal" name="input_data" action="db/insert/insert.php" method="post">
+<div class="form-group">
+  <label class="col-sm-2 control-label">Nama:</label>
+  <div class="col-sm-10">
+    <input type="text" name="nama_pelanggan" maxlength="20" required="required">
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">Alamat:</label>
+  <div class="col-sm-10">
+    <input type="text" name="alamat" maxlength="100" required="required">
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">No-Telp:</label>
+  <div class="col-sm-10">
+    <input type="text" name="no_telp" maxlength="20" required="required">
+  </div>
+</div>
+<button class="btn btn-success" type="submit" value="insert" name="Input_data">
   <span class="glyphicon glyphicon-user"></span> Create New User
 </button>
-<hr>
 
-<h3 ng-show="edit">Create New User:</h3>
-<h3 ng-hide="edit">Edit User:</h3>
 
-<form class="form-horizontal">
-<div class="form-group">
-  <label class="col-sm-2 control-label">First Name:</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="fName" ng-disabled="!edit" placeholder="First Name">
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-sm-2 control-label">Last Name:</label>
-  <div class="col-sm-10">
-    <input type="text" ng-model="lName" ng-disabled="!edit" placeholder="Last Name">
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-sm-2 control-label">Password:</label>
-  <div class="col-sm-10">
-    <input type="password" ng-model="passw1" placeholder="Password">
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-sm-2 control-label">Repeat:</label>
-  <div class="col-sm-10">
-    <input type="password" ng-model="passw2" placeholder="Repeat Password">
-  </div>
-</div>
 </form>
+</div>
+<script src="content/angular/main.js"></script>
 
-<hr>
-<button class="btn btn-success" ng-disabled="error || incomplete">
-  <span class="glyphicon glyphicon-save"></span> Save Changes
-</button>
-</div>
-</div>
-<script src = "http://../js/users.js"></script>
-<script src = "http://../js/main.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-</div>
+</body>
 </div>

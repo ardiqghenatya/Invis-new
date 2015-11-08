@@ -7,7 +7,7 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('WebApp', [
-  'ngRoute'
+  'ngRoute',
 ]);
 
 /**
@@ -24,6 +24,9 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/services", {templateUrl: "pages/services.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "pages/contact.html", controller: "PageCtrl"})
     .when("/logout", {templateUrl: "login/logout.php", controller: "PageCtrl"})
+    .when("/input", {templateUrl: "/pages/input.php", controller: "PageCtrl"})
+    .when("/test", {templateUrl: "/pages/tespage.php", controller: "PageCtrl"})
+    .when("/modal", {templateUrl: "/pages/modal.php", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "pages/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "pages/blog_item.html", controller: "BlogCtrl"})
@@ -38,6 +41,12 @@ app.controller('BlogCtrl', function (/* $scope, $location, $http */) {
   console.log("Blog Controller reporting for duty.");
 });
 
+app.controller('arcCtrl', function($scope,$http){
+  $http.get('db/select/select-pelanggan.php')
+    .success(function(arcResp) {
+        $scope.arcTableBarang = arcResp;
+    })
+});
 /**
  * Controls all other Pages
  */

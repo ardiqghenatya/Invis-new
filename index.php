@@ -14,7 +14,8 @@
     <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
     <link rel="stylesheet" href="content/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="content/bootstrap/css/bootstrap-theme.min.css">
-    <link href="content/bootstrap/font/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="content/angular/angular.material.min.css">
+    <link href="content/bootstrap/fonts/font-awesome.min.css" rel="stylesheet">
 
     <!-- Our Website CSS Styles -->
     <link rel="stylesheet" href="content/bootstrap/css/main.css">
@@ -31,9 +32,10 @@
 <script src="content/bootstrap/js/bootstrap.min.js"></script>
 
 <script src="content/angular/angular.min.js"></script>
+<script src="content/angular/angular.material.min.js"></script>
 <script src="content/angular/angular-route.min.js"></script>
 
 <script src="content/angular/main.js"></script>
-
+<script src="content/angular/myUsers.js"></script>
 </body>
 </html>
